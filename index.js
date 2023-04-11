@@ -1,6 +1,6 @@
 import axios from 'axios'
 const poll = 12075676
-const pick = 54826309
+const pick = 54826307
 const heads = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34',
     'Referer': 'https://www.ecosdelcombeima.com/'
@@ -19,7 +19,10 @@ const vote = async () => {
 
     await axios.get(`${vote_url}?p=${poll}&b=2&a=${pick},0=&va=16&n=${magic_data}&cookie=0&url=${heads.Referer}&tags=${'12075676-src:poll-embed'}`, {
         headers: {...heads, 'Authority': 'polls.polldaddy.com'}
-    }).then(res => console.log(magic_data, res.data, '\n\n\n\n\n\n'))
+    }).then(res => {
+        console.clear()
+        console.log(magic_data, '\n\n')
+    })
 }
 setInterval(() => {
     vote()
